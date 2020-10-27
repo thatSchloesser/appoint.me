@@ -11,11 +11,21 @@ app.get('/', (req, res) => {
   );
 });
 
+//bundle.js
+app.get('/bundle.js', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/bundle.js'));
+});
+
 app.get('/api/test', (req, res) => {
   res.status(200).send('API TEST!!!');
 });
 
-// return file that corresponds with route.
+// quick wildcard optimzation:
+// app.get('*', (req, res) => {
+//   res.status(200).send('404 not found');
+// });
+
+// return file that corresponds with route
 app.get('*', (req, res) => {
   const route = req.params['0'].split('/')[1];
   console.log('route:', route);
