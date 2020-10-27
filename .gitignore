@@ -3,6 +3,7 @@
 coverage/
 dist/*
 !dist/index.html
+!dist/favicon.ico
 node_modules
 *.log
 src/components/overview/
