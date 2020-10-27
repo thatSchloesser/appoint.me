@@ -4,25 +4,31 @@ const fs = require('fs');
 
 const app = express();
 
-fs.readdir(path.join(__dirname, '../dist'), (err, files) => {
-  if (err) { throw err; }
-  const fileArray = files.filter((file) => file !== 'index.html');
+// is this a performance optimization?
+app.get('/', (req, res) => {
+  res.sendFile(
+    path.join(__dirname, '../dist/index.html'),
+  );
+});
 
-  app.get('*', (req, res) => {
-    // let path = req.query;
-    // console.log(req.query);
-    // res.sendFile()
+app.get('/api/test', (req, res) => {
+  res.status(200).send('API TEST!!!');
+});
 
-    const route = req.params['0'].split('/')[1]; // Get the route from the request.
-    console.log(route);
+// return file that corresponds with route.
+app.get('*', (req, res) => {
+  const route = req.params['0'].split('/')[1];
+  console.log('route:', route);
+
+  fs.readdir(path.join(__dirname, '../dist'), (err, files) => {
+    if (err) throw err;
+    const fileArray = files.filter((file) => file !== 'index.html');
+
     if (fileArray.includes(route)) {
       // If the first part of the route is in the files array its
       // either a file or a folder, we try to send them the file in the
       // code below.
 
-      // Set the route path to a variable.
-      // P.S. We don't have to worry about traversal with '../', this
-      // is taken care of automatically when using join.
       const tempFilePath = path.join(
         __dirname, `../dist/${req.params['0']}`,
       ); // Set the file path
@@ -39,10 +45,11 @@ fs.readdir(path.join(__dirname, '../dist'), (err, files) => {
         }
       });
     } else {
-      // Otherwise its a route in the React website.
+      // Otherwise route to React website.
+      // COULD handle 404 NOT FOUND here... but easier to do with react-router
       res.sendFile(
         path.join(__dirname, '../dist/index.html'),
-      );
+      ); // NOTE: this will send a request for bundle.js, which is handled above.
     }
   });
 });
