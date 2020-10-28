@@ -10,7 +10,7 @@ import { createBrowserHistory } from 'history';
 import { Container } from '@material-ui/core';
 // Components
 import Home from './components/HOME/index';
-
+import Dashboard from './components/dashboard/Dashboard.js';
 
 // CSS and Fonts
 import './App.css';
@@ -34,11 +34,12 @@ class App extends React.Component {
     // could add ThemeProvider here if desired.
     return (
       <Router history={history}>
-        <Container>
+        {/* <Container> */}
           <Switch>
             <Route path="/test">
               <>
-                TESTING ROUTING
+                {/* TESTING ROUTING */}
+                <Dashboard />
               </>
             </Route>
             <Route path="/">
@@ -47,7 +48,7 @@ class App extends React.Component {
               </>
             </Route>
           </Switch>
-        </Container>
+        {/* </Container> */}
       </Router>
     );
   }
