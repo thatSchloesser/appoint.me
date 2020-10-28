@@ -19,7 +19,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
-import Chart from './Chart';
+// import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
 
@@ -28,10 +28,11 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
+        Appoint.Me
+      </Link>
+      {' '}
       {new Date().getFullYear()}
-      {'.'}
+      {'. '}
     </Typography>
   );
 }
@@ -146,7 +147,7 @@ export default function Dashboard() {
             Dashboard
           </Typography>
           <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
+            <Badge badgeContent={0} color="secondary">
               <NotificationsIcon />
             </Badge>
           </IconButton>

@@ -1,5 +1,6 @@
 import React from 'react';
-import Link from '@material-ui/core/Link';
+import Button from '@material-ui/core/Button';
+// import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,7 +11,9 @@ import Title from './Title';
 
 // Generate Order Data
 function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
+  return ({
+    id, date, name, shipTo, paymentMethod, amount,
+  });
 }
 
 const rows = [
@@ -34,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Orders() {
   const classes = useStyles();
   return (
-    <React.Fragment>
+    <>
       <Title>Recent Orders</Title>
       <Table size="small">
         <TableHead>
@@ -59,10 +62,11 @@ export default function Orders() {
         </TableBody>
       </Table>
       <div className={classes.seeMore}>
-        <Link color="primary" href="#" onClick={preventDefault}>
+        {/* changed from link: */}
+        <Button color="primary" href="#" onClick={preventDefault}>
           See more orders
-        </Link>
+        </Button>
       </div>
-    </React.Fragment>
+    </>
   );
 }

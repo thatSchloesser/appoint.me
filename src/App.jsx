@@ -7,10 +7,10 @@ import {
 } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 // import axios from 'axios';
-import { Container } from '@material-ui/core';
+
 // Components
 import Home from './components/HOME/index';
-import Dashboard from './components/dashboard/Dashboard.js';
+import Dashboard from './components/dashboard/Dashboard';
 
 // CSS and Fonts
 import './App.css';
@@ -35,19 +35,19 @@ class App extends React.Component {
     return (
       <Router history={history}>
         {/* <Container> */}
-          <Switch>
-            <Route path="/test">
-              <>
-                {/* TESTING ROUTING */}
-                <Dashboard />
-              </>
-            </Route>
-            <Route path="/">
-              <>
-                <Home />
-              </>
-            </Route>
-          </Switch>
+        <Switch>
+          <Route path="/test">
+            <>
+              {/* TESTING ROUTING */}
+              <Home />
+            </>
+          </Route>
+          <Route path="/">
+            <>
+              <Dashboard />
+            </>
+          </Route>
+        </Switch>
         {/* </Container> */}
       </Router>
     );
