@@ -29,8 +29,6 @@ import styles from './styles';
 import { withTheme } from '@material-ui/styles';
 import { withStyles } from "@material-ui/core/styles";
 
-
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -57,8 +55,8 @@ let dashboard = function Dashboard(props) {
   const fixedHeightPaper = clsx(props.classes.paper, props.classes.fixedHeight);
 
   return (
-    <div className={props.classes.root}>
-      <CssBaseline />
+    <>
+      {/* <CssBaseline />
       <AppBar position="absolute" className={clsx(props.classes.appBar, open && props.classes.appBarShift)}>
         <Toolbar className={props.classes.toolbar}>
           <IconButton
@@ -96,7 +94,7 @@ let dashboard = function Dashboard(props) {
         <List>{mainListItems}</List>
         <Divider />
         <List>{secondaryListItems}</List>
-      </Drawer>
+      </Drawer> */}
       <main className={props.classes.content}>
         <div className={props.classes.appBarSpacer} />
         <Container maxWidth="lg" className={props.classes.container}>
@@ -125,7 +123,7 @@ let dashboard = function Dashboard(props) {
           </Box>
         </Container>
       </main>
-    </div>
+    </>
   );
 };
 

@@ -86,68 +86,72 @@ class App extends React.Component {
     let { classes } = this.props;
     return (
       <>
-        <Router history={history}>
-          {/* <Container> */}
+        <div className={classes.root}>
+          <Router history={history}>
+            {/* <Container> */}
 
-          <CssBaseline />
-          <AppBar position="absolute" className={clsx(classes.appBar, openDrawer && classes.appBarShift)}>
-            <Toolbar className={classes.toolbar}>
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="open drawer"
-                onClick={this.handleDrawerOpen}
-                className={clsx(classes.menuButton,
-                  openDrawer && classes.menuButtonHidden)}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-                Dashboard
-              </Typography>
-              <IconButton color="inherit">
-                <Badge badgeContent={4} color="secondary">
-                  {/* <NotificationsIcon /> */}
-                </Badge>
-              </IconButton>
-            </Toolbar>
-          </AppBar>
-          <Drawer
-            variant="permanent"
-            classes={{
-              paper: clsx(classes.drawerPaper,
-                !openDrawer && classes.drawerPaperClose),
-            }}
-            open={openDrawer}
-          >
-            <div className={classes.toolbarIcon}>
-              <IconButton
-                onClick={this.handleDrawerClose}
-              >
-                <ChevronLeftIcon />
-              </IconButton>
-            </div>
-            <Divider />
-            <List>{mainListItems}</List>
-            <Divider />
-            <List>{secondaryListItems}</List>
-          </Drawer>
+            <CssBaseline />
+            <AppBar position="absolute" className={clsx(classes.appBar, openDrawer && classes.appBarShift)}>
+              <Toolbar className={classes.toolbar}>
+                <IconButton
+                  edge="start"
+                  color="inherit"
+                  aria-label="open drawer"
+                  onClick={this.handleDrawerOpen}
+                  className={clsx(classes.menuButton,
+                    openDrawer && classes.menuButtonHidden)}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+                  Dashboard
+                </Typography>
+                <IconButton color="inherit">
+                  <Badge badgeContent={4} color="secondary">
+                    {/* icone here */}
+                  </Badge>
+                </IconButton>
+              </Toolbar>
+            </AppBar>
+            <Drawer
+              variant="permanent"
+              classes={{
+                paper: clsx(classes.drawerPaper,
+                  !openDrawer && classes.drawerPaperClose),
+              }}
+              open={openDrawer}
+            >
+              <div className={classes.toolbarIcon}>
+                <IconButton
+                  onClick={this.handleDrawerClose}
+                >
+                  <ChevronLeftIcon />
+                </IconButton>
+              </div>
+              <Divider />
+              <List>{mainListItems}</List>
+              <Divider />
+              <List>{secondaryListItems}</List>
+            </Drawer>
+            {/* <Dashboard />
 
-          <Switch>
-            <Route exact path="/">
-              {/* <Link to="/test">
-                link test
-              </Link> */}
-              {/* <Dashboard /> */}
-              <Home />
-            </Route>
-            <Route path="/test">
-              {/* TESTING ROUTING */}
-              <Home />
-            </Route>
-          </Switch>
-          {/* </Container> */}
-        </Router>
+              CONTENT HERE */}
+            <Switch>
+              <Route exact path="/">
+                {/* <Link to="/test">
+                  link test
+                </Link> */}
+                <Dashboard />
+                <Home />
+              </Route>
+              <Route path="/test">
+                {/* TESTING ROUTING */}
+                <Home />
+              </Route>
+            </Switch>
+            {/* </Container> */}
+          </Router>
+        </div>
       </>
     );
   }
