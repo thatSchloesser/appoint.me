@@ -26,12 +26,14 @@ export const mainListItems = (
         test link
       </Link>
     </div> */}
-    <ListItem button>
-      <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      <ListItemText primary="Dashboard" />
-    </ListItem>
+    <Link to="/" button style={{ textDecoration: 'none' }}>
+      <ListItem button>
+        <ListItemIcon>
+          <DashboardIcon />
+        </ListItemIcon>
+        <ListItemText primary="Dashboard" />
+      </ListItem>
+    </Link>
     <ListItem button>
       <ListItemIcon>
         <AllInboxIcon />

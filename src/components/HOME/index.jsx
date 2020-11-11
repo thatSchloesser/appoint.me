@@ -16,7 +16,10 @@ class Home extends React.Component {
   render() {
     return (
       <>
-        Hello World
+        <main>
+
+          Hello World
+        </main>
       </>
     );
   }
