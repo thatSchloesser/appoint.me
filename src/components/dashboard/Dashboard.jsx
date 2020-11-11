@@ -22,6 +22,7 @@ import { mainListItems, secondaryListItems } from './listItems';
 // import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
+import Home from '../HOME';
 
 function Copyright() {
   return (
@@ -147,7 +148,7 @@ export default function Dashboard() {
             Dashboard
           </Typography>
           <IconButton color="inherit">
-            <Badge badgeContent={0} color="secondary">
+            <Badge badgeContent={4} color="secondary">
               <NotificationsIcon />
             </Badge>
           </IconButton>

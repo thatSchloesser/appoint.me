@@ -1,3 +1,4 @@
+const PORT = process.env.PORT || 8080;
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -6,9 +7,8 @@ const app = express();
 
 // is this a performance optimization?
 app.get('/', (req, res) => {
-  res.sendFile(
-    path.join(__dirname, '../dist/index.html'),
-  );
+  console.log('sent root');
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 //bundle.js
@@ -26,6 +26,7 @@ app.get('/api/test', (req, res) => {
 // });
 
 // return file that corresponds with route
+// re -write...
 app.get('*', (req, res) => {
   const route = req.params['0'].split('/')[1];
   console.log('route:', route);
@@ -39,9 +40,7 @@ app.get('*', (req, res) => {
       // either a file or a folder, we try to send them the file in the
       // code below.
 
-      const tempFilePath = path.join(
-        __dirname, `../dist/${req.params['0']}`,
-      ); // Set the file path
+      const tempFilePath = path.join(__dirname, `../dist/${req.params['0']}`); // Set the file path
 
       // Check if file exists. If it does send the file, otherwise send
       // a 404 and console.log an error.
@@ -57,11 +56,10 @@ app.get('*', (req, res) => {
     } else {
       // Otherwise route to React website.
       // COULD handle 404 NOT FOUND here... but easier to do with react-router
-      res.sendFile(
-        path.join(__dirname, '../dist/index.html'),
-      ); // NOTE: this will send a request for bundle.js, which is handled above.
+      res.sendFile(path.join(__dirname, '../dist/index.html')); // NOTE: this will send a request for bundle.js, which is handled above.
     }
   });
 });
 
-app.listen(8080);
+console.log('listening on ', PORT);
+app.listen(PORT);

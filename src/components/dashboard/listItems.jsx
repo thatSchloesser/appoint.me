@@ -4,14 +4,28 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+// import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
-// import BarChartIcon from '@material-ui/icons/BarChart';
+import BarChartIcon from '@material-ui/icons/BarChart';
 // import LayersIcon from '@material-ui/icons/Layers';
+import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
+import AllInboxIcon from '@material-ui/icons/AllInbox';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+
+import {
+  Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
 
 export const mainListItems = (
   <div>
+    {/* <div>
+      <Link to="/test">
+        test link
+      </Link>
+    </div> */}
     <ListItem button>
       <ListItemIcon>
         <DashboardIcon />
@@ -20,23 +34,27 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <AllInboxIcon />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <ListItemText primary="Emails" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <PeopleIcon />
+        <CalendarTodayIcon />
       </ListItemIcon>
-      <ListItemText primary="Profile" />
+      <ListItemText primary="Appointment" />
     </ListItem>
+    {/* TODO: restyle the onclick to not be red, dammit */}
+    <Link to="/test" button style={{ textDecoration: 'none' }}>
+      <ListItem button onclick>
+
+        <ListItemIcon>
+          <PeopleIcon />
+        </ListItemIcon>
+        <ListItemText primary="Profile" />
+      </ListItem>
+    </Link>
     {/* <ListItem button>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Reports" />
-    </ListItem>
-    <ListItem button>
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>

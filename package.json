@@ -7,7 +7,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "node server/server.js",
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack-dev-server",
     "build-prod": "webpack -p --mode production",

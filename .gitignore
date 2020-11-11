@@ -6,11 +6,6 @@ dist/*
 !dist/favicon.ico
 node_modules
 *.log
-src/components/overview/
-src/components/qa/
-src/components/recommended/
-src/components/shared/
-src/components/reviews/
 spec/
 
 # OS generated files
