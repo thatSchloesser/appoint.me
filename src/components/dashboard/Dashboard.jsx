@@ -23,7 +23,6 @@ import { mainListItems, secondaryListItems } from './listItems';
 import Deposits from './Deposits';
 import Orders from './Orders';
 
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">

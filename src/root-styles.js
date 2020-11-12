@@ -1,3 +1,6 @@
+// for no discernible reason,
+// material ui does not like it if I put this file outside of root
+
 const drawerWidth = 240;
 const makeStyles = (theme) => ({
   root: {

@@ -8,8 +8,9 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 
+import Copyright from '../copyright';
 
-import styles from '../styles/styles';
+import styles from '../../styles/styles';
 
 // this is a template componenet that needs to be reformatted
 class Widget extends React.Component {
@@ -17,7 +18,7 @@ class Widget extends React.Component {
     super(props);
 
     this.state = {
-      someData: [],
+
     };
   }
 
@@ -27,7 +28,14 @@ class Widget extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+
+    // look at styles.js. this is a cool way to setup a variable-width (based on grid)
+    // paper element with different heights. 
+
+    // in the future, we can change 'fixedHeight' to 'componentxHeight' in our styles
+    // (and even create individual style files)
+
+    // const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
     return (
       <>
@@ -35,29 +43,13 @@ class Widget extends React.Component {
           <div className={classes.appBarSpacer} />
           <Container maxWidth="lg" className={classes.container}>
             <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper className={fixedHeightPaper}>
-                  {/* <Chart /> */}
-                  testing testing 123
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper className={fixedHeightPaper}>
-                  {/* <Deposits /> */}
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper className={classes.paper}>
-                  {/* <Orders /> */}
+                  YOUR WIDGET HERE (along with others above or below if desired)
                 </Paper>
               </Grid>
             </Grid>
-            <Box pt={4}>
-              {/* <Copyright /> */}
-            </Box>
+            <Copyright />
           </Container>
         </main>
       </>

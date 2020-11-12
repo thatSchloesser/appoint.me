@@ -1,3 +1,4 @@
+// TODO: move import to separate file.
 const drawerWidth = 240;
 const makeStyles = (theme) => ({
   root: {

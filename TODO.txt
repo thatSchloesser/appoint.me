@@ -1,12 +1,12 @@
 
 Immediate: 
 
-    1) clean up imports 
+~    1) clean up imports 
 
-    2) make dummy detail page with cleaned up styles
-        read how the current styles.js are configured to optimize and understand
+~   2) make dummy detail page with cleaned up styles
+    ~    read how the current styles.js are configured to optimize and understand
 
-        clean up test files (sidebar FILES + component files)
+    ~    clean up test files (sidebar FILES + component files)
 
     3) Make login / user page
         -> this will require setting up a database

@@ -1,17 +1,16 @@
 import React from 'react';
 import clsx from 'clsx';
-// import { makeStyles } from '@material-ui/core/styles';
+
 import { withStyles } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
-// import { withTheme } from '@material-ui/styles';
 // import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
-import styles from './styles';
+import styles from '../../styles/styles';
 
 import Copyright from '../copyright';
 
@@ -28,8 +27,8 @@ const dashboard = function Dashboard(props) {
             {/* Chart */}
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
+                {/* Not working:  */}
                 {/* <Chart /> */}
-                {/* <Home /> */}
                 HELLO WORLD!!!
               </Paper>
             </Grid>

@@ -38,13 +38,12 @@ import { mainListItems, secondaryListItems } from './jsx/listItems';
 
 // Components
 import Widget from './components/widget-template';
-import Dashboard from './components/class-dashboard/Dashboard';
+import Sample from './components/sample-widget';
 // import Dashboard from './components/dashboard/Dashboard';
 // import Copyright from './components/copyright';
 
 // CSS and Fonts
-import makeStyles from './styles'; // js material-ui styles
-import './App.css';
+import makeStyles from './root-styles'; // js material-ui styles
 
 class App extends React.Component {
   constructor(props) {
@@ -132,13 +131,13 @@ class App extends React.Component {
                 {/* <Link to="/test">
                   link test
                 </Link> */}
-                <Dashboard />
+                <Sample />
               </Route>
               <Route exact path="/test">
                 {/* <Link to="/test">
                   link test
                 </Link> */}
-                <Dashboard />
+                <Sample />
               </Route>
               <Route path="/home">
                 {/* TESTING ROUTING */}
