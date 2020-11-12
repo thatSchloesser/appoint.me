@@ -2,11 +2,21 @@
 Immediate: 
 
 ~    1) clean up imports 
+        didn't work with extracting the appBar because of props interaction.
 
 ~   2) make dummy detail page with cleaned up styles
     ~    read how the current styles.js are configured to optimize and understand
 
     ~    clean up test files (sidebar FILES + component files)
+
+        learned about: 
+            cslx (class name template library)
+            material ui box component (styling)
+            how to use paper + css floating to make vanilla html look very good
+                (material ui's strategy)
+
+            what my morning brain warm up feels like 
+    -> finished 11/12, 5 - 7:30 am
 
     3) Make login / user page
         -> this will require setting up a database
