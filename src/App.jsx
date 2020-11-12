@@ -37,12 +37,10 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './jsx/listItems';
 
 // Components
-import Home from './components/HOME/index';
-// import Dashboard from './components/dashboard/Dashboard';
+import Widget from './components/widget-template';
 import Dashboard from './components/class-dashboard/Dashboard';
-
-import Copyright from './components/copyright';
-
+// import Dashboard from './components/dashboard/Dashboard';
+// import Copyright from './components/copyright';
 
 // CSS and Fonts
 import makeStyles from './styles'; // js material-ui styles
@@ -144,13 +142,14 @@ class App extends React.Component {
               </Route>
               <Route path="/home">
                 {/* TESTING ROUTING */}
-                <Home />
+                <Widget />
               </Route>
             </Switch>
 
             {/* </Container> */}
           </Router>
-          <Copyright />
+          {/* Not working, add on each component */}
+          {/* <Copyright /> */}
         </div>
       </>
     );

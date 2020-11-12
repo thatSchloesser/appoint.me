@@ -11,8 +11,8 @@ import Box from '@material-ui/core/Box';
 
 import styles from '../styles/styles';
 
-//this is a template componenet that needs to be reformatted
-class Home extends React.Component {
+// this is a template componenet that needs to be reformatted
+class Widget extends React.Component {
   constructor(props) {
     super(props);
 
@@ -26,7 +26,6 @@ class Home extends React.Component {
   }
 
   render() {
-    
     const { classes } = this.props;
     const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
@@ -70,4 +69,4 @@ class Home extends React.Component {
 //   id: PropTypes.number.isRequired,
 // };
 
-export default withStyles(styles)(Home);
+export default withStyles(styles)(Widget);
