@@ -45,8 +45,8 @@ export const mainListItems = (
       <ListItemText primary="Appointment" />
     </ListItem>
     {/* TODO: restyle the onclick to not be red, dammit */}
-    <Link to="/test" button style={{ textDecoration: 'none' }}>
-      <ListItem button onclick>
+    <Link to="/test" button="true" style={{ textDecoration: 'none' }}>
+      <ListItem button>
 
         <ListItemIcon>
           <PeopleIcon />

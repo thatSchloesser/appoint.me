@@ -1,0 +1,68 @@
+
+Immediate: 
+
+    1) clean up imports 
+
+    2) make dummy detail page with cleaned up styles
+        read how the current styles.js are configured to optimize and understand
+
+        clean up test files (sidebar FILES + component files)
+
+    3) Make login / user page
+        -> this will require setting up a database
+
+        -> just deploy to Heroku when the front end is done first. 
+
+    3.5) Express server cleanup 
+        (/dist filename logic & redirects if 404 not found... 
+           -> which I have to handle with react-router, not express. gah.)
+
+            google: "react-router + express"
+
+    4) add other APIs and features for the hell of it. 
+        maps APIs
+        callendar api 
+        google sheets oAuth 
+
+
+==== Skeleton level ====
+
+    Proptypes check in app (see linter error)
+
+    extract root level jsx code into separate files
+
+    Add category to sidebar list
+        very low priority: smooth out dashboard word transition
+
+    unstyle links on react-router (override with material-ui?)
+
+    TEST: will using a styles.js file with no duplicates actually affect performance?? (prob not if not used a ton.)
+
+    
+=== Deployment options ===
+
+    -> use heroku + postgres + lambda in docker?
+
+=== Feature level ===
+
+    user profile page / authentication / login 
+        => use database creation later...
+
+    create an on-demand web scraper
+
+ *   use machine learning to generate all the information necessary to write code in any language
+    from scraping their docs together
+
+        -> start with a "hello, World" application. 
+
+        => this is a massive project, but also inspiring
+
+*   Use bots and apis to scrape financial data, then data mine it? idk.
+
+
+
+
+=== Notes to self ===
+
+look at how many languages I'm using here. Literally. kinda crazy. 
+

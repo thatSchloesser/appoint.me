@@ -1,4 +1,8 @@
 import React from 'react';
+import clsx from 'clsx'; // class name strings
+// import axios from 'axios';
+
+// Router
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,53 +10,43 @@ import {
   Link,
   NavLink,
 } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
-// import axios from 'axios';
 
-
-// imports TO ORGANIZE
-import CssBaseline from '@material-ui/core/CssBaseline';
+// material ui theming
 import { withStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Box from '@material-ui/core/Box';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import Badge from '@material-ui/core/Badge';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-// import Link from '@material-ui/core/Link';
+// import { withTheme } from '@material-ui/styles';
 
-import clsx from 'clsx';
+// Material-ui compoonents
+import {
+  CssBaseline,
+  AppBar,
+  Toolbar,
+  Drawer,
+  List,
+  Divider,
+  IconButton,
+  Badge,
+  Typography,
+} from '@material-ui/core';
 
-
+// icons -> need full import string, sadly
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
-//fix:
-import { mainListItems, secondaryListItems } from './components/dashboard/listItems';
-// import Chart from './Chart';
-// import Deposits from './Deposits';
-// import Orders from './Orders';
-// import styles from './styles';
-import { withTheme } from '@material-ui/styles';
-
+// sidebaritems (move file):
+import { mainListItems, secondaryListItems } from './jsx/listItems';
 
 // Components
 import Home from './components/HOME/index';
 // import Dashboard from './components/dashboard/Dashboard';
 import Dashboard from './components/class-dashboard/Dashboard';
 
-// CSS and Fonts
-import './App.css';
-import makeStyles from './styles.js';
+import Copyright from './components/copyright';
 
-const history = createBrowserHistory();
+
+// CSS and Fonts
+import makeStyles from './styles'; // js material-ui styles
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -82,14 +76,13 @@ class App extends React.Component {
     // could add ThemeProvider here if desired.
     // const classes = useStyles();
 
-    let { openDrawer } = this.state;
-    let { classes } = this.props;
+    const { openDrawer } = this.state;
+    const { classes } = this.props;
     return (
       <>
         <div className={classes.root}>
-          <Router history={history}>
+          <Router>
             {/* <Container> */}
-
             <CssBaseline />
             <AppBar position="absolute" className={clsx(classes.appBar, openDrawer && classes.appBarShift)}>
               <Toolbar className={classes.toolbar}>
@@ -108,7 +101,7 @@ class App extends React.Component {
                 </Typography>
                 <IconButton color="inherit">
                   <Badge badgeContent={4} color="secondary">
-                    {/* icone here */}
+                    <NotificationsIcon />
                   </Badge>
                 </IconButton>
               </Toolbar>
@@ -142,19 +135,28 @@ class App extends React.Component {
                   link test
                 </Link> */}
                 <Dashboard />
-                <Home />
               </Route>
-              <Route path="/test">
+              <Route exact path="/test">
+                {/* <Link to="/test">
+                  link test
+                </Link> */}
+                <Dashboard />
+              </Route>
+              <Route path="/home">
                 {/* TESTING ROUTING */}
                 <Home />
               </Route>
             </Switch>
+
             {/* </Container> */}
           </Router>
+          <Copyright />
         </div>
       </>
     );
   }
 }
 
-export default withStyles(makeStyles)(App);
+// it works without withTheme, but we are using theme, so I'm... keeping it?
+// https://material-ui.com/styles/api/#withstyles-styles-options-higher-order-component
+export default withStyles(makeStyles, { withTheme: true })(App);
